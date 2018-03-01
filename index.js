@@ -2,6 +2,8 @@
 const express = require("express");
 const hbs = require("hbs");
 const Joke = require("./models/Joke");
+const bodyParser = require("body-parser");
+const jokesController = require("./controllers/joke");
 // create and set up express app
 const app = express();
 
@@ -12,7 +14,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.use("/jokes", jokesController);
+
 app.set("view engine", "hbs");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // start our server
 app.listen(4000, () => console.log("Reporting for doodie port 4000"));

@@ -65,3 +65,5 @@ console.log("Reporting for doodie port 4000")
     const Joke = mongoose.model("Joke", JokeSchema);
     module.exports = Joke;
 14. node db/seed.js
+15. Create controllers
+16. Install body-parser
