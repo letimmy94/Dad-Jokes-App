@@ -2,7 +2,6 @@
 const express = require("express");
 const router = express.Router();
 const Joke = require("../models/Joke");
-const bodyParser = require("body-parser");
 
 // create a new joke
 router.post("/", (req, res) => {
@@ -19,7 +18,7 @@ router.get("/new", (req, res) => {
 // get a joke by its id
 router.get("/:id", (req, res) => {
   Joke.findOne({ _id: req.params.id }).then(joke => {
-    res.render("joke/show", joke);
+    res.render("jokes/show", joke);
   });
 });
 
