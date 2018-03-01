@@ -44,7 +44,6 @@ STEPS
 app.get("/", (req, res) => {
 res.send("Hello World")
 })
-
 app.listen(4000, () => {
 console.log("Reporting for doodie port 4000")
 })
@@ -60,4 +59,9 @@ console.log("Reporting for doodie port 4000")
     mongoose.connect("mongodb://localhost/dad_jokes"); <--- dad_jokes could be anything
     mongoose.Promise = Promise;
     module.exports = mongoose;
-12.
+12. Create models with Joke.js in it
+13. const mongoose = require("../db/connection");
+    const JokeSchema = new mongoose.Schema({});
+    const Joke = mongoose.model("Joke", JokeSchema);
+    module.exports = Joke;
+14. node db/seed.js

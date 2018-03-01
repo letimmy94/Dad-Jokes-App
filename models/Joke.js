@@ -1,0 +1,21 @@
+// import DB connection
+const mongoose = require("../db/connection");
+
+// Create new schema (structure)
+const JokeSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  punchline: String,
+  createdAt: {
+    type: Date,
+    default: Date.now()
+  }
+});
+
+// Giving mongoose the schema to build the model
+const Joke = mongoose.model("Joke", JokeSchema);
+
+// exporting the Joke model
+module.exports = Joke;
