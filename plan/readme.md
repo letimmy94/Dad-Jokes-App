@@ -51,4 +51,13 @@ console.log("Reporting for doodie port 4000")
 
 5.  Git ignore node modules by creating a .gitignore file
 6.  Install handlebars
-7.
+7.  app.set("view engine", "hbs");
+8.  Change res.send("Hello World") to res.render("index")
+9.  Create db folder and Connection.js file
+10. Install Mongoose
+11. In Connection.js:
+    const mongoose = require("mongoose");
+    mongoose.connect("mongodb://localhost/dad_jokes"); <--- dad_jokes could be anything
+    mongoose.Promise = Promise;
+    module.exports = mongoose;
+12.

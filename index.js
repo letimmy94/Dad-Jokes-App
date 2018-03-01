@@ -4,7 +4,7 @@ const hbs = require("hbs");
 // create and set up express app
 const app = express();
 
-// define a route
+// define routes
 app.get("/", (req, res) => {
   res.render("index");
 });
